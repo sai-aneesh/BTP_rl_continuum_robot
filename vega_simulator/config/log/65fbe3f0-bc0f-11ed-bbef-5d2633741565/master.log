@@ -1,0 +1,7 @@
+[rosmaster.main][INFO] 2023-03-06 16:39:44,841: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2023-03-06 16:39:44,841: Starting ROS Master Node
+[xmlrpc][INFO] 2023-03-06 16:39:44,844: XML-RPC server binding to 0.0.0.0:11311
+[xmlrpc][ERROR] 2023-03-06 16:39:44,845: ERROR: Unable to start XML-RPC server, port 11311 is already in use
+[rosmaster.main][INFO] 2023-03-06 16:42:14,801: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2023-03-06 16:42:14,802: stopping master...
+[rospy.core][INFO] 2023-03-06 16:42:14,802: signal_shutdown [atexit]

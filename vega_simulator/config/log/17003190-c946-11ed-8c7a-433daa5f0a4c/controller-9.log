@@ -1,0 +1,23 @@
+[rospy.client][INFO] 2023-03-23 12:25:49,831: init_node, name[/controller], pid[6789]
+[xmlrpc][INFO] 2023-03-23 12:25:49,831: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-23 12:25:49,831: Started XML-RPC server [http://aneesh-Swift:40459/]
+[rospy.impl.masterslave][INFO] 2023-03-23 12:25:49,832: _ready: http://aneesh-Swift:40459/
+[rospy.init][INFO] 2023-03-23 12:25:49,832: ROS Slave URI: [http://aneesh-Swift:40459/]
+[rospy.registration][INFO] 2023-03-23 12:25:49,832: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-23 12:25:49,832: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-23 12:25:49,933: registered with master
+[rospy.rosout][INFO] 2023-03-23 12:25:49,933: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-23 12:25:49,942: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-23 12:25:49,944: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-03-23 12:25:49,982: topic[/steps_compiled] adding connection to [http://aneesh-Swift:45473/], count 0
+[rospy.internal][INFO] 2023-03-23 12:25:49,987: topic[/actual_system/state] adding connection to [http://aneesh-Swift:46861/], count 0
+[rospy.internal][INFO] 2023-03-23 12:25:50,098: topic[/actual_system/force] adding connection to [/actual_system/simluator], count 0
+[rosout][INFO] 2023-03-23 12:25:50,982: controller node intialized and has Subscribed to compiled step and publishing to force
+[rosout][INFO] 2023-03-23 12:25:50,985: publishing first command to start the system
+[rospy.core][INFO] 2023-03-23 12:30:44,894: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-23 12:30:44,902: topic[/actual_system/force] removing connection to /actual_system/simluator
+[rospy.internal][INFO] 2023-03-23 12:30:44,903: topic[/steps_compiled] removing connection to http://aneesh-Swift:45473/
+[rospy.internal][INFO] 2023-03-23 12:30:44,903: topic[/steps_compiled] removing connection to http://aneesh-Swift:45473/
+[rospy.internal][INFO] 2023-03-23 12:30:44,903: topic[/actual_system/state] removing connection to http://aneesh-Swift:46861/
+[rospy.impl.masterslave][INFO] 2023-03-23 12:30:44,903: signal-2
+[rospy.core][INFO] 2023-03-23 12:30:45,496: signal_shutdown [atexit]

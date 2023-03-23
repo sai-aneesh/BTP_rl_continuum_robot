@@ -1,0 +1,72 @@
+[rospy.client][INFO] 2023-03-05 23:59:54,761: init_node, name[/controller], pid[3678]
+[xmlrpc][INFO] 2023-03-05 23:59:54,762: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-05 23:59:54,762: Started XML-RPC server [http://aneesh-Swift:35873/]
+[rospy.init][INFO] 2023-03-05 23:59:54,762: ROS Slave URI: [http://aneesh-Swift:35873/]
+[rospy.impl.masterslave][INFO] 2023-03-05 23:59:54,762: _ready: http://aneesh-Swift:35873/
+[rospy.registration][INFO] 2023-03-05 23:59:54,763: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-05 23:59:54,763: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-05 23:59:54,863: registered with master
+[rospy.rosout][INFO] 2023-03-05 23:59:54,863: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-05 23:59:54,865: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-05 23:59:54,866: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-03-05 23:59:54,875: topic[/steady_system/complete_pose] adding connection to [http://aneesh-Swift:46049/], count 0
+[rospy.internal][INFO] 2023-03-05 23:59:54,956: topic[/steady_system/force] adding connection to [/steady_state_checker_node], count 0
+[rospy.internal][INFO] 2023-03-05 23:59:55,154: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-03-05 23:59:55,156: topic[/actual_system/reset] adding connection to [/actual_system/simluator], count 0
+[rosout][INFO] 2023-03-05 23:59:56,875: resetting the environment
+[rosout][INFO] 2023-03-05 23:59:56,877: resetting the environment
+[rosout][INFO] 2023-03-06 00:00:03,529: resetting the environment
+[rospy.internal][INFO] 2023-03-06 00:00:04,474: topic[/rosout] removing connection to /rosout
+[rospy.rosout][ERROR] 2023-03-06 00:00:10,321: Unable to report rosout: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/msproxy.py", line 165, in get_param_cached
+    return rospy.impl.paramserver.get_param_server_cache().get(resolved_key)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/paramserver.py", line 177, in get
+    raise KeyError(key)
+KeyError: '/rosout_disable_topics_generation'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/rosout.py", line 91, in _rosout
+    disable_topics_ = rospy.get_param_cached("/rosout_disable_topics_generation", False)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/client.py", line 490, in get_param_cached
+    return _param_server.get_param_cached(param_name)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/msproxy.py", line 168, in get_param_cached
+    code, msg, value = self.target.subscribeParam(rospy.names.get_caller_id(), rospy.core.get_node_uri(), resolved_key)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/core.py", line 669, in _ServerProxy__request
+    return xmlrpcclient.ServerProxy._ServerProxy__request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosout][INFO] 2023-03-06 00:00:10,319: resetting the environment
+[rospy.core][INFO] 2023-03-06 00:00:13,628: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-06 00:00:13,629: topic[/steady_system/complete_pose] removing connection to http://aneesh-Swift:46049/
+[rospy.registration][WARNING] 2023-03-06 00:00:13,629: cannot unregister with master due to network issues
+[rospy.internal][INFO] 2023-03-06 00:00:13,630: topic[/steady_system/force] removing connection to /steady_state_checker_node
+[rospy.internal][INFO] 2023-03-06 00:00:13,630: topic[/actual_system/reset] removing connection to /actual_system/simluator
+[rospy.impl.masterslave][INFO] 2023-03-06 00:00:13,630: signal-2
+[rospy.core][INFO] 2023-03-06 00:00:28,650: signal_shutdown [signal-15]

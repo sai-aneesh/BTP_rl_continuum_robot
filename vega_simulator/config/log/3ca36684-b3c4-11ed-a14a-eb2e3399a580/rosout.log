@@ -1,0 +1,9 @@
+
+
+1677189093.776053180  Node Startup
+1677189097.868295431 INFO /controller [rl_control.py:95(vega_env.reset)] [topics: /actual_system/target, /rosout, /steady_system/velocity, /actual_system/reset, /steady_system/force, /steady_system/state] resetting the environment
+1677189097.874141693 INFO /controller [rl_control.py:95(vega_env.reset)] [topics: /actual_system/target, /rosout, /steady_system/velocity, /actual_system/reset, /steady_system/force, /steady_system/state] resetting the environment
+1677189109.498653888 INFO /controller [rl_control.py:95(vega_env.reset)] [topics: /actual_system/reset, /steady_system/force, /actual_system/target, /rosout, /steady_system/velocity, /steady_system/state] resetting the environment
+1677189109.500464916 INFO /controller [rl_control.py:95(vega_env.reset)] [topics: /actual_system/reset, /steady_system/force, /actual_system/target, /rosout, /steady_system/velocity, /steady_system/state] resetting the environment
+1677189116.023059129 INFO /controller [rl_control.py:95(vega_env.reset)] [topics: /actual_system/reset, /steady_system/force, /actual_system/target, /rosout, /steady_system/velocity, /steady_system/state] resetting the environment
+1677189116.895296335 INFO /controller [rl_control.py:95(vega_env.reset)] [topics: /actual_system/reset, /steady_system/force, /actual_system/target, /rosout, /steady_system/velocity, /steady_system/state] resetting the environment

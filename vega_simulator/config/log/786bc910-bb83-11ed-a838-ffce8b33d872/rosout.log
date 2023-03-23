@@ -1,0 +1,8 @@
+
+
+1678040886.092280904  Node Startup
+1678040890.299613952 INFO /controller [rl_control.py:96(vega_env.reset)] [topics: /actual_system/target, /steady_system/complete_pose, /actual_system/reset, /steady_system/force, /rosout, /actual_system/radius] resetting the environment
+1678040890.302072048 INFO /controller [rl_control.py:96(vega_env.reset)] [topics: /actual_system/target, /steady_system/complete_pose, /actual_system/reset, /steady_system/force, /rosout, /actual_system/radius] resetting the environment
+1678040996.876869678 INFO /controller [rl_control.py:96(vega_env.reset)] [topics: /rosout, /steady_system/complete_pose, /actual_system/radius, /actual_system/reset, /steady_system/force, /actual_system/target] resetting the environment
+1678040996.878733158 INFO /controller [rl_control.py:96(vega_env.reset)] [topics: /rosout, /steady_system/complete_pose, /actual_system/radius, /actual_system/reset, /steady_system/force, /actual_system/target] resetting the environment
+1678041003.531070232 INFO /controller [rl_control.py:96(vega_env.reset)] [topics: /rosout, /steady_system/complete_pose, /actual_system/radius, /actual_system/reset, /steady_system/force, /actual_system/target] resetting the environment

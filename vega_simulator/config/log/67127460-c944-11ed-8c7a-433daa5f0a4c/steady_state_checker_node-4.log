@@ -1,0 +1,54 @@
+[rospy.client][INFO] 2023-03-23 12:01:55,206: init_node, name[/steady_state_checker_node], pid[4393]
+[xmlrpc][INFO] 2023-03-23 12:01:55,207: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-23 12:01:55,207: Started XML-RPC server [http://aneesh-Swift:42985/]
+[rospy.init][INFO] 2023-03-23 12:01:55,207: ROS Slave URI: [http://aneesh-Swift:42985/]
+[rospy.impl.masterslave][INFO] 2023-03-23 12:01:55,207: _ready: http://aneesh-Swift:42985/
+[rospy.registration][INFO] 2023-03-23 12:01:55,208: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-23 12:01:55,208: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-23 12:01:55,308: registered with master
+[rospy.rosout][INFO] 2023-03-23 12:01:55,308: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-23 12:01:55,311: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-23 12:01:55,312: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-03-23 12:01:55,323: topic[/actual_system/state] adding connection to [http://aneesh-Swift:38985/], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:55,326: topic[/actual_system/complete_pose] adding connection to [http://aneesh-Swift:38985/], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:55,329: topic[/actual_system/complete_state] adding connection to [http://aneesh-Swift:38985/], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:55,578: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:55,579: topic[/actual_system/force] adding connection to [/actual_system/simluator], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:58,175: topic[/steady_system/complete_pose] adding connection to [/controller], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:58,176: topic[/steady_system/velocity] adding connection to [/controller], count 0
+[rospy.internal][INFO] 2023-03-23 12:01:58,192: topic[/steady_system/force] adding connection to [http://aneesh-Swift:35635/], count 0
+[rospy.internal][INFO] 2023-03-23 12:02:45,759: topic[/actual_system/state] adding connection to [http://aneesh-Swift:36685/], count 1
+[rospy.internal][INFO] 2023-03-23 12:02:45,769: topic[/actual_system/complete_state] adding connection to [http://aneesh-Swift:36685/], count 1
+[rospy.internal][INFO] 2023-03-23 12:02:45,770: topic[/actual_system/complete_pose] adding connection to [http://aneesh-Swift:36685/], count 1
+[rospy.internal][INFO] 2023-03-23 12:02:45,859: topic[/actual_system/state] removing connection to http://aneesh-Swift:36685/
+[rospy.internal][WARNING] 2023-03-23 12:02:45,864: Unknown error initiating TCP/IP socket to aneesh-Swift:55891 (http://aneesh-Swift:36685/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 569, in connect
+    self.read_header()
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 664, in read_header
+    self._validate_header(read_ros_handshake_header(sock, self.read_buff, self.protocol.buff_size))
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosgraph/network.py", line 357, in read_ros_handshake_header
+    d = sock.recv(buff_size)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+[rospy.internal][INFO] 2023-03-23 12:02:45,864: topic[/actual_system/complete_pose] removing connection to http://aneesh-Swift:36685/
+[rospy.internal][WARNING] 2023-03-23 12:02:45,864: Unknown error initiating TCP/IP socket to aneesh-Swift:55891 (http://aneesh-Swift:36685/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 569, in connect
+    self.read_header()
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 664, in read_header
+    self._validate_header(read_ros_handshake_header(sock, self.read_buff, self.protocol.buff_size))
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosgraph/network.py", line 357, in read_ros_handshake_header
+    d = sock.recv(buff_size)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+[rospy.internal][INFO] 2023-03-23 12:02:45,865: topic[/actual_system/complete_state] removing connection to http://aneesh-Swift:36685/
+[rospy.internal][INFO] 2023-03-23 12:02:45,870: topic[/actual_system/state] removing connection to http://aneesh-Swift:38985/
+[rospy.internal][INFO] 2023-03-23 12:02:45,872: topic[/actual_system/complete_state] removing connection to http://aneesh-Swift:38985/
+[rospy.internal][INFO] 2023-03-23 12:02:45,874: topic[/actual_system/complete_pose] removing connection to http://aneesh-Swift:38985/
+[rospy.internal][INFO] 2023-03-23 12:02:46,222: topic[/steady_system/force] removing connection to http://aneesh-Swift:35635/
+[rospy.impl.masterslave][INFO] 2023-03-23 12:02:46,262: external shutdown request from [/master]: [/steady_state_checker_node] Reason: new node registered with same name
+[rospy.core][INFO] 2023-03-23 12:02:46,262: signal_shutdown [external shutdown request from [/master]: [[/steady_state_checker_node] Reason: new node registered with same name]]
+[rospy.internal][INFO] 2023-03-23 12:02:46,263: topic[/actual_system/force] removing connection to /actual_system/simluator
+[rospy.internal][INFO] 2023-03-23 12:02:46,266: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-03-23 12:02:46,266: topic[/steady_system/complete_pose] removing connection to /controller
+[rospy.internal][INFO] 2023-03-23 12:02:46,266: topic[/steady_system/velocity] removing connection to /controller
+[rospy.core][INFO] 2023-03-23 12:02:46,380: signal_shutdown [atexit]

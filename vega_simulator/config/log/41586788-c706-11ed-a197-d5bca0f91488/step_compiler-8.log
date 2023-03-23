@@ -1,0 +1,83 @@
+[rospy.client][INFO] 2023-03-20 16:15:28,553: init_node, name[/step_compiler], pid[123121]
+[xmlrpc][INFO] 2023-03-20 16:15:28,553: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-20 16:15:28,553: Started XML-RPC server [http://aneesh-Swift:44841/]
+[rospy.init][INFO] 2023-03-20 16:15:28,553: ROS Slave URI: [http://aneesh-Swift:44841/]
+[rospy.impl.masterslave][INFO] 2023-03-20 16:15:28,554: _ready: http://aneesh-Swift:44841/
+[rospy.registration][INFO] 2023-03-20 16:15:28,554: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-20 16:15:28,554: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-20 16:15:28,654: registered with master
+[rospy.rosout][INFO] 2023-03-20 16:15:28,654: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-20 16:15:28,657: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-20 16:15:28,658: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2023-03-20 16:15:28,673: Step compiler node intialized and has Subscribed to states
+[rospy.client][INFO] 2023-03-20 16:18:51,891: init_node, name[/step_compiler], pid[123490]
+[xmlrpc][INFO] 2023-03-20 16:18:51,891: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-20 16:18:51,892: Started XML-RPC server [http://aneesh-Swift:46615/]
+[rospy.init][INFO] 2023-03-20 16:18:51,892: ROS Slave URI: [http://aneesh-Swift:46615/]
+[rospy.impl.masterslave][INFO] 2023-03-20 16:18:51,892: _ready: http://aneesh-Swift:46615/
+[rospy.registration][INFO] 2023-03-20 16:18:51,893: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-20 16:18:51,893: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-20 16:18:51,993: registered with master
+[rospy.rosout][INFO] 2023-03-20 16:18:51,993: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-20 16:18:51,996: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-20 16:18:51,996: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2023-03-20 16:18:52,008: Step compiler node intialized and has Subscribed to states
+[rospy.impl.masterslave][INFO] 2023-03-20 16:18:52,053: external shutdown request from [/master]: new node registered with same name
+[rospy.core][INFO] 2023-03-20 16:18:52,053: signal_shutdown [external shutdown request from [/master]: [new node registered with same name]]
+[rospy.internal][INFO] 2023-03-20 16:18:52,141: topic[/steps_compiled] adding connection to [/controller], count 0
+[rospy.core][INFO] 2023-03-20 16:18:52,421: signal_shutdown [atexit]
+[rospy.core][INFO] 2023-03-20 16:19:13,009: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-20 16:19:13,016: topic[/steps_compiled] removing connection to /controller
+[rospy.impl.masterslave][INFO] 2023-03-20 16:19:13,017: signal-2
+[rospy.core][INFO] 2023-03-20 16:19:13,610: signal_shutdown [atexit]
+[rospy.client][INFO] 2023-03-20 16:19:18,843: init_node, name[/step_compiler], pid[123847]
+[xmlrpc][INFO] 2023-03-20 16:19:18,844: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-20 16:19:18,844: Started XML-RPC server [http://aneesh-Swift:46757/]
+[rospy.init][INFO] 2023-03-20 16:19:18,844: ROS Slave URI: [http://aneesh-Swift:46757/]
+[rospy.impl.masterslave][INFO] 2023-03-20 16:19:18,845: _ready: http://aneesh-Swift:46757/
+[rospy.registration][INFO] 2023-03-20 16:19:18,845: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-20 16:19:18,845: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-20 16:19:18,945: registered with master
+[rospy.rosout][INFO] 2023-03-20 16:19:18,946: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-20 16:19:18,957: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-20 16:19:18,960: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2023-03-20 16:19:19,004: Step compiler node intialized and has Subscribed to states
+[rospy.internal][INFO] 2023-03-20 16:19:19,072: topic[/steps_compiled] adding connection to [/controller], count 0
+[rospy.core][INFO] 2023-03-20 16:19:35,495: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-20 16:19:35,515: topic[/steps_compiled] removing connection to /controller
+[rospy.impl.masterslave][INFO] 2023-03-20 16:19:35,515: signal-2
+[rospy.core][INFO] 2023-03-20 16:19:36,097: signal_shutdown [atexit]
+[rospy.client][INFO] 2023-03-20 16:22:05,086: init_node, name[/step_compiler], pid[124876]
+[xmlrpc][INFO] 2023-03-20 16:22:05,087: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-20 16:22:05,087: Started XML-RPC server [http://aneesh-Swift:36287/]
+[rospy.init][INFO] 2023-03-20 16:22:05,087: ROS Slave URI: [http://aneesh-Swift:36287/]
+[rospy.impl.masterslave][INFO] 2023-03-20 16:22:05,087: _ready: http://aneesh-Swift:36287/
+[rospy.registration][INFO] 2023-03-20 16:22:05,089: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-20 16:22:05,089: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-20 16:22:05,188: registered with master
+[rospy.rosout][INFO] 2023-03-20 16:22:05,188: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-20 16:22:05,191: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-20 16:22:05,193: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2023-03-20 16:22:05,206: Step compiler node intialized and has Subscribed to states
+[rospy.internal][INFO] 2023-03-20 16:22:05,355: topic[/steps_compiled] adding connection to [/controller], count 0
+[rospy.core][INFO] 2023-03-20 16:22:12,031: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-20 16:22:12,053: topic[/steps_compiled] removing connection to /controller
+[rospy.impl.masterslave][INFO] 2023-03-20 16:22:12,053: signal-2
+[rospy.core][INFO] 2023-03-20 16:22:12,633: signal_shutdown [atexit]
+[rospy.client][INFO] 2023-03-20 16:30:15,304: init_node, name[/step_compiler], pid[125521]
+[xmlrpc][INFO] 2023-03-20 16:30:15,305: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-20 16:30:15,306: Started XML-RPC server [http://aneesh-Swift:45035/]
+[rospy.init][INFO] 2023-03-20 16:30:15,306: ROS Slave URI: [http://aneesh-Swift:45035/]
+[rospy.impl.masterslave][INFO] 2023-03-20 16:30:15,306: _ready: http://aneesh-Swift:45035/
+[rospy.registration][INFO] 2023-03-20 16:30:15,307: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-20 16:30:15,307: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-20 16:30:15,406: registered with master
+[rospy.rosout][INFO] 2023-03-20 16:30:15,407: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-20 16:30:15,416: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-20 16:30:15,419: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rosout][INFO] 2023-03-20 16:30:15,455: Step compiler node intialized and has Subscribed to states
+[rospy.internal][INFO] 2023-03-20 16:30:15,500: topic[/steps_compiled] adding connection to [/controller], count 0
+[rospy.core][INFO] 2023-03-20 16:31:01,356: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-20 16:31:01,375: topic[/steps_compiled] removing connection to /controller
+[rospy.impl.masterslave][INFO] 2023-03-20 16:31:01,376: signal-2
+[rospy.core][INFO] 2023-03-20 16:31:01,958: signal_shutdown [atexit]

@@ -1,0 +1,19 @@
+<launch>
+	<arg name="nSections" default="5" />
+	<arg name="step_height" default="0.004" />
+	<arg name="n_output" default="2" />
+	<arg name="time_step" default="0.5" />
+	<arg name="subStepsperTimeStep" default="8" />
+	<arg name="system1" default="actual_system" />
+
+	<group ns = "$(arg system1)">
+	    <node pkg="vega_simulator" type="actual_simulator" name="simluator" output="screen" args="$(arg time_step) $(arg subStepsperTimeStep)">
+	      <remap from="/force" to="/$(arg system1)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system1)/tip_pose"/>
+	    </node>
+  	</group>    
+    <node pkg="vega_simulator" type="rl_control.py" name="controller" output="screen" args="$(arg nSections)" />
+    <node pkg="vega_simulator" type="steady_state_checker.py" name="steady_state_checker_node" output="screen" />
+</launch>
+
+

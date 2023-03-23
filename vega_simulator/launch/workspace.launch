@@ -1,0 +1,70 @@
+<launch>
+	<arg name="nSections" default="5" />
+	<arg name="step_height" default="0.004" />
+	<arg name="n_output" default="4" />
+	<arg name="time_step" default="0.5" />
+	<arg name="time_step_virtual" default="1" />
+	<arg name="subStepsperTimeStep" default="3" />
+	<arg name="subStepsperTimeStep_virtual" default="6" />
+	<arg name="system1" default="actual_system" />
+	<arg name="system2" default="virtual_system" />
+	<arg name="system3" default="step_response0" />
+	<arg name="system4" default="step_response1" />
+	<arg name="system5" default="step_response2" />
+	<arg name="system6" default="step_response3" />
+	<arg name="system7" default="step_response4" />
+	<group ns = "$(arg system1)">
+	    <node pkg="vega_simulator" type="actual_simulator" name="simluator" output="screen" args="$(arg time_step) $(arg subStepsperTimeStep)">
+	      <remap from="/force" to="/$(arg system1)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system1)/tip_pose"/>
+	    </node>
+  	</group>
+	<group ns = "$(arg system2)">
+	    <node pkg="vega_simulator" type="workSpace_simulator" name="simluator" output="screen" args="-1 $(arg step_height) $(arg time_step) $(arg subStepsperTimeStep) $(arg time_step_virtual) $(arg subStepsperTimeStep_virtual)">
+	      <remap from="/force" to="/$(arg system2)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system2)/tip_pose"/>
+	    </node>
+  	</group>
+
+  	<!-- for the nodes below change the sytem name and also the first argument -->
+	<group ns = "$(arg system3)">
+	    <node pkg="vega_simulator" type="workSpace_simulator" name="simluator" output="screen" args="0 $(arg step_height) $(arg time_step) $(arg subStepsperTimeStep) $(arg time_step_virtual) $(arg subStepsperTimeStep_virtual)">
+	      <remap from="/force" to="/$(arg system3)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system3)/tip_pose"/>
+	    </node>
+  	</group>
+  	
+
+	<group ns = "$(arg system4)">
+	    <node pkg="vega_simulator" type="workSpace_simulator" name="simluator" output="screen" args="1 $(arg step_height) $(arg time_step) $(arg subStepsperTimeStep) $(arg time_step_virtual) $(arg subStepsperTimeStep_virtual)">
+	      <remap from="/force" to="/$(arg system4)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system4)/tip_pose"/>
+	    </node>
+  	</group>
+
+	<group ns = "$(arg system5)">
+	    <node pkg="vega_simulator" type="workSpace_simulator" name="simluator" output="screen" args="2 $(arg step_height) $(arg time_step) $(arg subStepsperTimeStep) $(arg time_step_virtual) $(arg subStepsperTimeStep_virtual)">
+	      <remap from="/force" to="/$(arg system5)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system5)/tip_pose"/>
+	    </node>
+  	</group>
+
+	<group ns = "$(arg system6)">
+	    <node pkg="vega_simulator" type="workSpace_simulator" name="simluator" output="screen" args="3 $(arg step_height) $(arg time_step) $(arg subStepsperTimeStep) $(arg time_step_virtual) $(arg subStepsperTimeStep_virtual)">
+	      <remap from="/force" to="/$(arg system6)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system6)/tip_pose"/>
+	    </node>
+  	</group>
+
+	<group ns = "$(arg system7)">
+	    <node pkg="vega_simulator" type="workSpace_simulator" name="simluator" output="screen" args="4 $(arg step_height) $(arg time_step) $(arg subStepsperTimeStep) $(arg time_step_virtual) $(arg subStepsperTimeStep_virtual)">
+	      <remap from="/force" to="/$(arg system7)/force"/>
+	      <remap from="/tip_pose" to="/$(arg system7)/tip_pose"/>
+	    </node>
+  	</group>
+    
+    <node pkg="vega_simulator" type="step_compiler.py" name="step_compiler" output="screen" args="$(arg nSections) $(arg step_height) $(arg n_output)" />
+    <node pkg="vega_simulator" type="workspace_.py" name="controller" output="screen" args="$(arg nSections) $(arg n_output)" />
+
+
+</launch>

@@ -1,0 +1,5 @@
+Starting application.
+Loading scene configuration from beam3_vox_massspring_coarse.config.
+Parsing configuration file beam3_vox_massspring_coarse.config...
+Error: could not open option file beam3_vox_massspring_coarse.config
+Error parsing options.

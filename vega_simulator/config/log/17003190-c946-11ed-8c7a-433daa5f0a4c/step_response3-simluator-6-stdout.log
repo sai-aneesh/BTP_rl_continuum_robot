@@ -1,0 +1,29 @@
+Starting application.
+Loading scene configuration from beam3_vox_massspring_coarse.config.
+Parsing configuration file beam3_vox_massspring_coarse.config...
+MASSSPRINGSYSTEMOBJCONFIGFILENAME: beam3_vox_coarse.massspring
+SOLVER: implicitNewmark
+INITIALPOSITIONFILENAME: __none
+INITIALVELOCITYFILENAME: __none
+G: 9.81
+RENDERINGMESHFILENAME: beam_coarse.obj
+FIXEDVERTICESFILENAME: constraints_coarse.bou
+SUBSTEPSPERTIMESTEP: 3
+DAMPINGMASSCOEF: 1
+DAMPINGSTIFFNESSCOEF: 0.31623
+FORCELOADSFILENAME: loads_coarse.csv
+VEGACONFIGURATIONSFILENAME: vegaConfigurations_coarse.csv
+MOMENTRIGIDSECTIONLOADSFILENAME: moments_coarse.csv
+MOMENTRIGIDSECTIONLOADSTIMEDFILENAME: __none
+Loading mass spring system from an obj file...
+Parsing configuration file beam3_vox_coarse.massspring...
+MASSSPRINGMESHFILENAME: beam_coarse.obj
+SURFACEDENSITY: 60
+TENSILESTIFFNESS: 18750
+SHEARSTIFFNESS: 18750
+BENDSTIFFNESS: 0
+DAMPING: 0
+ADDGRAVITY: 0
+reading the stifness file.
+the count of number of stifness specified in the file is:60
+number of stifness specified doesnt match the number of faces!! check the  file again
