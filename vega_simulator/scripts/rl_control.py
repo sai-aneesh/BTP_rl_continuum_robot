@@ -30,7 +30,7 @@ class vega_env(gym.Env):
         self.force_pub=rospy.Publisher("/steady_system/force",Float32MultiArray,queue_size=1)
         self.episode_reset_pub = rospy.Publisher("/actual_system/reset",Bool,queue_size=1)
         self.target_pub = rospy.Publisher("/actual_system/target",Float32MultiArray,queue_size=1)
-        self.radius_pub = rospy.Publisher("/actual_system/radius",Float32,queue_size=1)
+        self.radius_pub = rospy.Publisher("/actual_system/radius",Float32MultiArray,queue_size=1)
 
         #creating all subscibers
         # rospy.Subscriber("/steady_system/state",Float32MultiArray,self.state_callback,queue_size=1)
@@ -42,7 +42,7 @@ class vega_env(gym.Env):
         self.forces_msg=Float32MultiArray()
         self.target_msg = Float32MultiArray()
         self.reset_msg = Bool()
-        self.radius_msg = Float32()
+        self.radius_msg = Float32MultiArray()
         self.measured_state = np.zeros(shape=(18,))
         self.velocity = np.array([0,0])
         self.theta = 0.02
@@ -51,6 +51,8 @@ class vega_env(gym.Env):
         self.n = 0
         self.n_limit = 15
         self.radius = 0.5
+        self.forces_msg.data=np.zeros(shape=(2,))
+        self.eccen = 0.0
         self.tar_vel = 0.5
 
         self.steps = 0
@@ -62,7 +64,7 @@ class vega_env(gym.Env):
 
         self.t_x =  self.radius*np.sin(self.theta)
         self.t_y =  self.radius*(1-np.cos(self.theta))
-        self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
+        self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*np.sqrt(1- self.eccen**2)*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
 
         # Define action and observation space
         self.observation_space = spaces.Box(low=-1, high=1, shape = (18,), dtype=np.float32)
@@ -103,12 +105,12 @@ class vega_env(gym.Env):
         self.episode_reset_pub.publish(self.reset_msg)
         # rospy.loginfo("A0. Resetting the environment")
 
-        self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
+        self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*np.sqrt(1- self.eccen**2)*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
         # observation should match observation space
         return np.array(self.measured_state).astype(np.float32)
 
     def step(self, action):
-                              #### what does this step mean?
+                                #### what does this step mean?
                                 ### basically, we want to know what action to take  
                                 ### to minimize distance between tip and target. 
                                 # We start by taking random actions and observing reward
@@ -138,30 +140,31 @@ class vega_env(gym.Env):
         if( self.n> self.n_limit):            
             self.radius = np.random.uniform(0.2,0.6)
             self.tar_vel = np.random.uniform(0.1,0.5)
+            self.eccen = np.random.uniform(0,0.8)
             self.n = 0
             self.n_limit = np.random.uniform(10,20)
-            self.radius_msg = Float32(self.radius)
+            self.radius_msg.data = np.array([self.radius,self.eccen]).astype(np.float32)
             self.radius_pub.publish(self.radius_msg)
         self.n += 1
 
         if(self.n == int(self.n_limit/2)):
             self.clck = bool(random.choice([True, False]))
 
-        if(self.theta <= 1.38) and (self.clck == False):
-            self.theta += self.tar_vel*dt
-        elif(self.theta > 1.38) and (self.clck == False):
-            self.theta -= self.tar_vel*dt
-            self.clck = True
-        elif(self.theta >= -1.38) and (self.clck == True):
-            self.theta -= self.tar_vel*dt
-        elif (self.theta < -1.38) and (self.clck == True):
-            self.theta += self.tar_vel*dt
-            self.clck = False
+        # if(self.theta <= 1.38) and (self.clck == False):
+        #     self.theta += self.tar_vel*dt
+        # elif(self.theta > 1.38) and (self.clck == False):
+        #     self.theta -= self.tar_vel*dt
+        #     self.clck = True
+        # elif(self.theta >= -1.38) and (self.clck == True):
+        #     self.theta -= self.tar_vel*dt
+        # elif (self.theta < -1.38) and (self.clck == True):
+        #     self.theta += self.tar_vel*dt
+        #     self.clck = False
 
         self.t_x = self.radius*np.sin(self.theta)
-        self.t_y = self.radius*(1-np.cos(self.theta))
+        self.t_y = self.radius*np.sqrt(1- self.eccen**2)*(1-np.cos(self.theta))
 
-        self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
+        self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*np.sqrt(1- self.eccen**2)*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
 
         # rospy.loginfo("A4. Steady state achieved!!")
 
@@ -171,7 +174,7 @@ class vega_env(gym.Env):
         # rospy.loginfo("A5. Calculating the error between the steady state tip pose and target pose")
 
         distance = np.sqrt(((x - self.target[0])**2+ (y - self.target[1])**2))
-        vel_diff = np.sqrt(((self.velocity[0] - self.radius*self.tar_vel*np.cos(self.theta))**2+ (self.velocity[1] - self.radius*self.tar_vel*np.sin(self.theta))**2))
+        vel_diff = np.sqrt(((self.velocity[0] - self.radius*self.tar_vel*np.cos(self.theta))**2+ (self.velocity[1] - self.radius*np.sqrt(1- self.eccen**2)*self.tar_vel*np.sin(self.theta))**2))
 
         #check if we reached the goal
         done = bool((distance < 0.01) and (vel_diff < 0.04))
@@ -223,7 +226,7 @@ class vega_env(gym.Env):
 
         print('self.target_velocity: ',self.radius*self.tar_vel , ".........TIME ELAPSED",dt )
         print('velocity_x :',self.velocity[0], '....target x_velocity:',self.radius*self.tar_vel*np.cos(self.theta))
-        print('velocity_y :',self.velocity[1], '....target y_velocity:',self.radius*self.tar_vel*np.sin(self.theta))
+        print('velocity_y :',self.velocity[1], '....target y_velocity:',self.radius*np.sqrt(1- self.eccen**2)*self.tar_vel*np.sin(self.theta))
       
         info = {}
         return np.array(self.measured_state).astype(np.float32), reward, done, info

@@ -1,5 +1,5 @@
 function state_callback(~,msg)
-    global xt yt nColsNodes original_pose f2 t_x t_y r tip_vel_t target_pose
+    global xt yt nColsNodes original_pose f2 t_x t_y r e tip_vel_t target_pose
     x=msg.Data(1:2:end);
     y=msg.Data(2:2:end);
     xt=[xt,x];
@@ -19,7 +19,7 @@ function state_callback(~,msg)
     xr=r*sin(theta);
 
     % Generate y-coordinate.
-    yr=r*(1-cos(theta));
+    yr=r*sqrt(1-e^2)*(1-cos(theta));
 
     % plot the circle.
     plot(xr,yr - 0.75);
