@@ -14,7 +14,7 @@ function state_callback(~,msg)
     plot(x(ceil(nColsNodes*0.5):nColsNodes:end),y(ceil(nColsNodes*0.5):nColsNodes:end),'k--','LineWidth',1)
     plot(x((end-nColsNodes+1):end),y((end-nColsNodes+1):end),'k','LineWidth',2) %line2
     plot(x(1:nColsNodes),y(1:nColsNodes),'b','LineWidth',4) %line4 flip
-    theta=linspace(-1.38,1.38,200);
+    theta=linspace(-3.14,3.14,200);
     % Generate x-coordinates.
     xr=r*sin(theta);
 
@@ -24,7 +24,8 @@ function state_callback(~,msg)
     % plot the circle.
     plot(xr,yr - 0.75);
     hold off
-    
+
+    text(-0.6,0.4,sprintf('Radius=%.2f and Eccentricity=%.2f',r,e));
     tip_vel = sqrt((tip_vel_t(1,end))^2 + (tip_vel_t(2,end))^2);
     tar_vel = sqrt((target_pose(3,end))^2 + (target_pose(4,end))^2);
     text(-0.6,0.2,sprintf('Tip Velocity=%.2f and Target Velocity=%.2f',tip_vel, tar_vel));
