@@ -1,0 +1,33 @@
+function state_callback(~,msg)
+    global xt yt nColsNodes original_pose f2 t_x t_y r tip_vel_t target_pose
+    x=msg.Data(1:2:end);
+    y=msg.Data(2:2:end);
+    xt=[xt,x];
+    yt=[yt,y];
+    x=x+original_pose(:,1);
+    y=y+original_pose(:,2);
+    figure(f2);
+    plot(x(1:nColsNodes:end),y(1:nColsNodes:end),'k','LineWidth',2) %line1
+    hold on
+    plot(t_x, -0.75+ t_y, 'x', 'LineWidth', 4, 'MarkerSize', 10);
+    plot(x(nColsNodes:nColsNodes:end),y(nColsNodes:nColsNodes:end),'k','LineWidth',2) %line3 flip
+    plot(x(ceil(nColsNodes*0.5):nColsNodes:end),y(ceil(nColsNodes*0.5):nColsNodes:end),'k--','LineWidth',1)
+    plot(x((end-nColsNodes+1):end),y((end-nColsNodes+1):end),'k','LineWidth',2) %line2
+    plot(x(1:nColsNodes),y(1:nColsNodes),'b','LineWidth',4) %line4 flip
+    theta=linspace(-1.38,1.38,200);
+    % Generate x-coordinates.
+    xr=r*sin(theta);
+
+    % Generate y-coordinate.
+    yr=r*(1-cos(theta));
+
+    % plot the circle.
+    plot(xr,yr - 0.75);
+    hold off
+    
+    tip_vel = sqrt((tip_vel_t(1,end))2
+    text(x,y,sprintf('VARNAME=%f',))
+    
+    xlim([-0.05+original_pose(end,2),0.05-original_pose(end,2)])
+    ylim([original_pose(end,2)*1.5,0.6])
+end

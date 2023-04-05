@@ -1,0 +1,19 @@
+[rospy.client][INFO] 2023-03-29 17:05:37,105: init_node, name[/controller], pid[63800]
+[xmlrpc][INFO] 2023-03-29 17:05:37,105: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-29 17:05:37,106: Started XML-RPC server [http://aneesh-Swift:41131/]
+[rospy.init][INFO] 2023-03-29 17:05:37,106: ROS Slave URI: [http://aneesh-Swift:41131/]
+[rospy.impl.masterslave][INFO] 2023-03-29 17:05:37,106: _ready: http://aneesh-Swift:41131/
+[rospy.registration][INFO] 2023-03-29 17:05:37,106: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-29 17:05:37,106: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-29 17:05:37,206: registered with master
+[rospy.rosout][INFO] 2023-03-29 17:05:37,206: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-29 17:05:37,208: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-29 17:05:37,209: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-03-29 17:05:37,434: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-03-29 17:05:37,435: topic[/actual_system/reset] adding connection to [/actual_system/simluator], count 0
+[rospy.internal][INFO] 2023-03-29 17:05:45,363: topic[/rosout] removing connection to /rosout
+[rospy.core][INFO] 2023-03-29 17:05:51,329: signal_shutdown [signal-2]
+[rospy.registration][WARNING] 2023-03-29 17:05:51,330: cannot unregister with master due to network issues
+[rospy.internal][INFO] 2023-03-29 17:05:51,330: topic[/actual_system/reset] removing connection to /actual_system/simluator
+[rospy.impl.masterslave][INFO] 2023-03-29 17:05:51,331: signal-2
+[rospy.core][INFO] 2023-03-29 17:06:06,352: signal_shutdown [signal-15]

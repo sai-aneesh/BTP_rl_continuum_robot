@@ -1,0 +1,31 @@
+[rospy.client][INFO] 2023-03-31 02:55:40,461: init_node, name[/controller], pid[17257]
+[xmlrpc][INFO] 2023-03-31 02:55:40,461: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-31 02:55:40,461: Started XML-RPC server [http://aneesh-Swift:39259/]
+[rospy.init][INFO] 2023-03-31 02:55:40,462: ROS Slave URI: [http://aneesh-Swift:39259/]
+[rospy.impl.masterslave][INFO] 2023-03-31 02:55:40,462: _ready: http://aneesh-Swift:39259/
+[rospy.registration][INFO] 2023-03-31 02:55:40,462: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-31 02:55:40,463: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-31 02:55:40,562: registered with master
+[rospy.rosout][INFO] 2023-03-31 02:55:40,562: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-31 02:55:40,564: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-31 02:55:40,565: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-03-31 02:55:40,576: topic[/steady_system/complete_pose] adding connection to [http://aneesh-Swift:39611/], count 0
+[rospy.internal][INFO] 2023-03-31 02:55:40,577: topic[/steady_system/velocity] adding connection to [http://aneesh-Swift:39611/], count 0
+[rospy.internal][INFO] 2023-03-31 02:55:40,620: topic[/steady_system/force] adding connection to [/steady_state_checker_node], count 0
+[rospy.internal][INFO] 2023-03-31 02:55:40,818: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-03-31 02:55:40,818: topic[/actual_system/reset] adding connection to [/actual_system/simluator], count 0
+[rospy.core][INFO] 2023-03-31 02:55:42,762: signal_shutdown [atexit]
+[rospy.internal][INFO] 2023-03-31 02:55:42,766: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-03-31 02:55:42,766: topic[/steady_system/force] removing connection to /steady_state_checker_node
+[rospy.internal][INFO] 2023-03-31 02:55:42,766: topic[/actual_system/reset] removing connection to /actual_system/simluator
+[rospy.internal][INFO] 2023-03-31 02:55:42,767: topic[/steady_system/complete_pose] removing connection to http://aneesh-Swift:39611/
+[rospy.internal][INFO] 2023-03-31 02:55:42,767: topic[/steady_system/velocity] removing connection to http://aneesh-Swift:39611/
+[rospy.internal][INFO] 2023-03-31 02:55:42,767: topic[/steady_system/velocity] removing connection to http://aneesh-Swift:39611/
+[rospy.topics][ERROR] 2023-03-31 02:55:42,768: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/topics.py", line 326, in close
+    c.close()
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 858, in close
+    self.socket.close()
+AttributeError: 'NoneType' object has no attribute 'close'
+
+[rospy.impl.masterslave][INFO] 2023-03-31 02:55:42,769: atexit

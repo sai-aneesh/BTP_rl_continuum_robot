@@ -57,6 +57,7 @@ class vega_env(gym.Env):
         self.reward_mean = 0
         self.dist_mean = 0
         self.vel_mean = 0
+        self.eng_mean = 0
 
 
         self.t_x =  self.radius*np.sin(self.theta)
@@ -160,18 +161,6 @@ class vega_env(gym.Env):
         self.t_x = self.radius*np.sin(self.theta)
         self.t_y = self.radius*(1-np.cos(self.theta))
 
-        #Idea for target point moving in a box enclosed workspace
-        # tar_vx = tar_vel*np.cos(self.theta)
-        # tar_vy = tar_vel*np.sin(self.theta)
-
-        # if(((self.t_y + tar_vy *dt)> 0.5) or ((self.t_y + tar_vy *dt) < 0.0)):
-        #     self.dir_y *=  -1
-        # if(((self.t_x + tar_vx * dt)> 0.3) or ((self.t_x + tar_vx * dt)< -0.3)):
-        #     self.dir_x *= -1
-
-        # self.t_x += tar_vx * dt *self.dir_x
-        # self.t_y += tar_vy *dt* self.dir_y
-
         self.target = np.array([self.t_x,self.t_y,self.radius*self.tar_vel*np.cos(self.theta),self.radius*self.tar_vel*np.sin(self.theta)]).astype(np.float32)
 
         # rospy.loginfo("A4. Steady state achieved!!")
@@ -187,34 +176,63 @@ class vega_env(gym.Env):
         #check if we reached the goal
         done = bool((distance < 0.01) and (vel_diff < 0.04))
 
-        #for testing
-        # done = True
+        #CODE FOR ENERGY MINIMIZATION REWARD
+        # returns square of distance b/w two points 
+        def length(X, Y): 
+            xDiff = X[0] - Y[0] 
+            yDiff = X[1] - Y[1] 
+            return np.sqrt(xDiff * xDiff + yDiff * yDiff)
 
-        # Null reward everywhere except when reaching the goal (left of the grid)
-        reward = - 400*distance  -(vel_diff)*200
+        def Angle(A, B, C): 
+            
+            # Square of lengths be a2, b2, c2 
+            a = length(B, C) 
+            b = length(A, C) 
+            c = length(A, B) 
 
-        print('distance error : ', distance, '.....................velocity error:',vel_diff)
-        print('reward:', reward)
+            # From Cosine law 
+            alpha = np.arccos((b**2 + c**2 - a**2) /(2 * b * c)); 
+            return alpha
+
+
+        angle = np.array([])
+        for i in range(0,10,2):
+            A  = self.measured_state[0:2]
+            B  = [0 , 0.75 * (1-(int(i/2)+1)/5)]
+            C  = self.measured_state[i+2:i+4] 
+            angle = np.append(angle,Angle(A,B,C))
+        
+
+        # Reward
+        reward = - 40*distance  -10*(vel_diff)- np.absolute((np.dot(action,angle)))
+
+        energy_penalty = np.absolute((np.dot(action,angle)))
+        print("R1 : ", 40*distance)
+        print("R2 :      ", 10*vel_diff)
+        print("R3 :            ", energy_penalty)
+       
 
         self.steps += 1
         self.reward_mean = (self.reward_mean*(self.steps -1) + reward)/self.steps
         self.dist_mean = (self.dist_mean*(self.steps -1) + distance)/self.steps
         self.vel_mean = (self.vel_mean*(self.steps -1) + vel_diff)/self.steps
+        self.eng_mean = (self.eng_mean*(self.steps -1) + energy_penalty)/self.steps
 
-        print('MEAN distance error : ', self.dist_mean, '..................... MEAN velocity error:',self.vel_mean)
+        print('MEAN distance error : ', self.dist_mean, '..................... MEAN velocity error:',self.vel_mean,'.....................MEAN Energy term:',self.eng_mean)
         print('STEPS:', self.steps,'MEAN reward:', self.reward_mean )
 
-        # # print('self.target_velocity: ',self.tar_vel , ".........self.clck",self.clck )
-        # print('velocity_x :',self.velocity[0], '....target x_velocity:',self.radius*self.tar_vel*np.cos(self.theta))
-        # print('velocity_y :',self.velocity[1], '....target y_velocity:',self.radius*self.tar_vel*np.sin(self.theta))
+        print('self.target_velocity: ',self.radius*self.tar_vel , ".........TIME ELAPSED",dt )
+        print('velocity_x :',self.velocity[0], '....target x_velocity:',self.radius*self.tar_vel*np.cos(self.theta))
+        print('velocity_y :',self.velocity[1], '....target y_velocity:',self.radius*self.tar_vel*np.sin(self.theta))
       
-
         info = {}
         return np.array(self.measured_state).astype(np.float32), reward, done, info
 
 
     def close(self):
         pass
+
+## IMPORTANT : THIS CODE ONLY WORKS FOR L=0.75, because that I assumed that in the c++ code of vega
 
 if __name__ == '__main__':
 
@@ -233,16 +251,16 @@ if __name__ == '__main__':
     # # Train the agent
 
     # #if no pretrained model
-    # # model = SAC('MlpPolicy', env, verbose=1, learning_starts = 100, batch_size=256, gamma = 0.9, use_sde = True, tensorboard_log ="/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/results")
+    # # model = SAC('MlpPolicy', env, verbose=1, learning_starts = 1000, batch_size=256, gamma = 0.99, use_sde = True, tensorboard_log ="/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/results")
     
     # #continue training from a saved checkpoint
-    # model = SAC.load("/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/config/mar16_Task4_Trajectory_Tracking", tensorboard_log="/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/results")
+    # model = SAC.load("/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/config/Mar31_Task5_Energy_Min_45000_steps", tensorboard_log="/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/results")
     # model.set_env(env)
 
     # # Save a checkpoint every 5000 steps
     # log_dir = os.getcwd()
     # # print(log_dir)
-    # checkpoint_callback = CheckpointCallback(save_freq=5000, save_path=log_dir +'/logs/',name_prefix='mar19_Task4_Trajectory_Tracking')
+    # checkpoint_callback = CheckpointCallback(save_freq=5000, save_path=log_dir +'/logs/',name_prefix='Mar31_Task5_Energy_Min')
 
     # # Separate evaluation env
     # # eval_env = vega_env(n_sections)
@@ -260,18 +278,18 @@ if __name__ == '__main__':
 
     # callback = CallbackList([ProgressBarCallback(),checkpoint_callback ])
 
-    # model.learn(total_timesteps=int(1e7), tb_log_name = "mar19_Task4_Trajectory_Tracking", callback=callback)
+    # model.learn(total_timesteps=int(1e7), tb_log_name = "Mar31_Task5_Energy_Min", callback=callback)
 
     # # # save the model
-    # model.save(log_dir + "/mar19_Task4_Trajectory_Tracking")
+    # model.save(log_dir + "/Mar31_Task5_Energy_Min")
 
     # # load the trained model
-    model = SAC.load("/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/config/mar15_Task4_Trajectory_Tracking_200000_steps")    
-    # Save the policy independently from the model
-    # Note: if you don't save the complete model with `model.save()`
+    model = SAC.load("/home/aneesh/catkin_ws/src/Soft_robo_sim/vega_simulator/config/V3_Mar31_Task5_Energy_Min_235000_steps")    
+    # # Save the policy independently from the model
+    # # Note: if you don't save the complete model with `model.save()`
     # # you cannot continue training afterward
     # policy = model.policy
-    # policy.save("mar19_Task4_Trajectory_Tracking_Policy")
+    # policy.save("Mar31_Task5_Energy_Min_Policy")
     ######### independent attempt to test########
     # start a new episode
     reward_mean = 0
@@ -288,7 +306,7 @@ if __name__ == '__main__':
         # print('obs=', obs, 'reward=', reward, 'done=', done)
         step += 1
         reward_mean = (reward_mean*(step -1) + reward)/step
-        print('OUTPUT:',reward_mean, reward, step)
+        # print('OUTPUT:',reward_mean, reward, step)
 
         #env.render(mode='console')
         if done:

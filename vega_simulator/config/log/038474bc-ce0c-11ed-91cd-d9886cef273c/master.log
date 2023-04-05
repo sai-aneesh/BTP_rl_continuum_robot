@@ -1,0 +1,232 @@
+[rosmaster.main][INFO] 2023-03-29 14:00:51,917: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2023-03-29 14:00:51,917: Starting ROS Master Node
+[xmlrpc][INFO] 2023-03-29 14:00:51,917: XML-RPC server binding to 0.0.0.0:11311
+[xmlrpc][INFO] 2023-03-29 14:00:51,918: Started XML-RPC server [http://aneesh-Swift:11311/]
+[rosmaster.master][INFO] 2023-03-29 14:00:51,918: Master initialized: port[11311], uri[http://aneesh-Swift:11311/]
+[xmlrpc][INFO] 2023-03-29 14:00:51,918: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2023-03-29 14:00:51,974: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2023-03-29 14:00:51,975: +PARAM [/roslaunch/uris/host_aneesh_swift__40227] by /roslaunch
+[rosmaster.master][INFO] 2023-03-29 14:00:52,033: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2023-03-29 14:00:52,033: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2023-03-29 14:00:52,053: +SERVICE [/rosout/get_loggers] /rosout http://aneesh-Swift:43317/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,053: +SERVICE [/rosout/set_logger_level] /rosout http://aneesh-Swift:43317/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,055: +PUB [/rosout_agg] /rosout http://aneesh-Swift:43317/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,060: +SUB [/rosout] /rosout http://aneesh-Swift:43317/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,072: +PUB [/rosout] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,073: +SERVICE [/actual_system/simluator/get_loggers] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,074: +SERVICE [/actual_system/simluator/set_logger_level] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,078: +SUB [/actual_system/force] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,081: +SUB [/actual_system/reset] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,082: +PUB [/actual_system/reset] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,083: +PUB [/actual_system/slopes] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,084: +PUB [/actual_system/state] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,085: +PUB [/actual_system/complete_state] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,086: +PUB [/actual_system/velocity] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,086: +PUB [/actual_system/complete_pose] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,117: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/']
+[rosmaster.master][INFO] 2023-03-29 14:00:52,121: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:33357/']
+[rosmaster.master][INFO] 2023-03-29 14:00:52,122: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:33357/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:00:52,123: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/']: sec=0.01, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:00:52,572: +PUB [/rosout] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,575: +SERVICE [/steady_state_checker_node/get_loggers] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,576: +SERVICE [/steady_state_checker_node/set_logger_level] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,578: +PUB [/steady_system/state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,579: +PUB [/steady_system/complete_pose] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,580: +PUB [/steady_system/complete_state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,581: +PUB [/actual_system/force] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,583: +PUB [/steady_system/velocity] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,585: +SUB [/actual_system/state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,587: +SUB [/actual_system/complete_pose] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,593: +SUB [/actual_system/complete_state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,596: +SUB [/steady_system/force] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 14:00:52,622: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:32779/']
+[rosmaster.master][INFO] 2023-03-29 14:00:52,623: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:32779/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:00:52,623: publisherUpdate[/actual_system/force] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:32779/']
+[rosmaster.master][INFO] 2023-03-29 14:00:52,624: publisherUpdate[/actual_system/force] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:32779/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:00:54,279: +PUB [/rosout] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,282: +SERVICE [/controller/get_loggers] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,283: +SERVICE [/controller/set_logger_level] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,283: +PUB [/steady_system/force] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,284: +PUB [/actual_system/reset] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,285: +PUB [/actual_system/target] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,286: +PUB [/actual_system/radius] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,287: +SUB [/steady_system/complete_pose] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,289: +SUB [/steady_system/velocity] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 14:00:54,326: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:32779/', 'http://aneesh-Swift:41101/']
+[rosmaster.master][INFO] 2023-03-29 14:00:54,327: publisherUpdate[/steady_system/force] -> http://aneesh-Swift:32779/ ['http://aneesh-Swift:41101/']
+[rosmaster.master][INFO] 2023-03-29 14:00:54,327: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:41101/']
+[rosmaster.master][INFO] 2023-03-29 14:00:54,328: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:41101/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:00:54,329: publisherUpdate[/steady_system/force] -> http://aneesh-Swift:32779/ ['http://aneesh-Swift:41101/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:00:54,329: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:32779/', 'http://aneesh-Swift:41101/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:03:13,137: +PUB [/rosout] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,138: +SERVICE [/matlab_global_node_70734/get_loggers] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,138: +SERVICE [/matlab_global_node_70734/set_logger_level] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,139: +PUB [/tf] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,142: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:32779/', 'http://aneesh-Swift:41101/', 'http://aneesh-Swift:44909/']
+[rosmaster.master][INFO] 2023-03-29 14:03:13,143: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:32779/', 'http://aneesh-Swift:41101/', 'http://aneesh-Swift:44909/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 14:03:13,713: +SUB [/steady_system/state] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,800: +SUB [/steady_system/complete_state] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,853: +SUB [/actual_system/target] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,901: +SUB [/steady_system/force] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:13,990: +SUB [/steady_system/velocity] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 14:03:14,027: +SUB [/actual_system/radius] /matlab_global_node_70734 http://aneesh-Swift:44909/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,683: -SUB [/actual_system/state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,683: -SUB [/actual_system/complete_pose] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,683: -SUB [/actual_system/complete_state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -SUB [/steady_system/force] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -PUB [/rosout] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -PUB [/steady_system/state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -PUB [/steady_system/complete_pose] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -PUB [/steady_system/complete_state] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -PUB [/actual_system/force] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -PUB [/steady_system/velocity] /steady_state_checker_node http://aneesh-Swift:32779/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,684: -SERVICE [/steady_state_checker_node/get_loggers] /steady_state_checker_node rosrpc://aneesh-Swift:33907
+[rosmaster.master][INFO] 2023-03-29 15:27:45,685: -SERVICE [/steady_state_checker_node/set_logger_level] /steady_state_checker_node rosrpc://aneesh-Swift:33907
+[rosmaster.master][INFO] 2023-03-29 15:27:45,690: -SUB [/steady_system/complete_pose] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,690: -SUB [/steady_system/velocity] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,690: -PUB [/rosout] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,690: -PUB [/steady_system/force] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,690: -PUB [/actual_system/reset] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,690: -PUB [/actual_system/target] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,691: -PUB [/actual_system/radius] /controller http://aneesh-Swift:41101/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,691: -SERVICE [/controller/get_loggers] /controller rosrpc://aneesh-Swift:45527
+[rosmaster.master][INFO] 2023-03-29 15:27:45,691: -SERVICE [/controller/set_logger_level] /controller rosrpc://aneesh-Swift:45527
+[rosmaster.master][INFO] 2023-03-29 15:27:45,696: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:41101/', 'http://aneesh-Swift:44909/']
+[rosmaster.master][INFO] 2023-03-29 15:27:45,697: publisherUpdate[/steady_system/state] -> http://aneesh-Swift:44909/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,698: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:41101/', 'http://aneesh-Swift:44909/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,698: publisherUpdate[/steady_system/complete_pose] -> http://aneesh-Swift:41101/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,698: publisherUpdate[/steady_system/state] -> http://aneesh-Swift:44909/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,698: publisherUpdate[/steady_system/complete_state] -> http://aneesh-Swift:44909/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,699: publisherUpdate[/steady_system/complete_state] -> http://aneesh-Swift:44909/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,699: publisherUpdate[/actual_system/force] -> http://aneesh-Swift:33357/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,700: publisherUpdate[/steady_system/complete_pose] -> http://aneesh-Swift:41101/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-03-29 15:27:45,700: publisherUpdate[/actual_system/force] -> http://aneesh-Swift:33357/ []: sec=0.00, result=[0, 'Unknown Error', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,700: publisherUpdate[/steady_system/velocity] -> http://aneesh-Swift:41101/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,701: publisherUpdate[/steady_system/velocity] -> http://aneesh-Swift:41101/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2023-03-29 15:27:45,703: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-03-29 15:27:45,703: publisherUpdate[/steady_system/velocity] -> http://aneesh-Swift:44909/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,703: publisherUpdate[/steady_system/velocity] -> http://aneesh-Swift:44909/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,704: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:44909/']
+[rosmaster.master][INFO] 2023-03-29 15:27:45,704: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:33357/', 'http://aneesh-Swift:44909/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,705: publisherUpdate[/steady_system/force] -> http://aneesh-Swift:44909/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,705: publisherUpdate[/steady_system/force] -> http://aneesh-Swift:44909/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,705: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:33357/']
+[rosmaster.master][INFO] 2023-03-29 15:27:45,706: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ ['http://aneesh-Swift:33357/']: sec=0.00, result=[0, 'Unknown Error', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,706: publisherUpdate[/actual_system/target] -> http://aneesh-Swift:44909/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,707: publisherUpdate[/actual_system/target] -> http://aneesh-Swift:44909/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,707: publisherUpdate[/actual_system/radius] -> http://aneesh-Swift:44909/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,708: publisherUpdate[/actual_system/radius] -> http://aneesh-Swift:44909/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.threadpool][ERROR] 2023-03-29 15:27:45,709: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-03-29 15:27:45,807: -PUB [/rosout] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,807: -PUB [/actual_system/reset] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,808: -PUB [/actual_system/slopes] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,808: -PUB [/actual_system/state] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,809: -PUB [/actual_system/complete_state] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,809: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:44909/']
+[rosmaster.master][INFO] 2023-03-29 15:27:45,809: -PUB [/actual_system/velocity] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,809: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ []
+[rosmaster.master][INFO] 2023-03-29 15:27:45,810: publisherUpdate[/rosout] -> http://aneesh-Swift:43317/ ['http://aneesh-Swift:44909/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-03-29 15:27:45,811: -PUB [/actual_system/complete_pose] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,811: -SUB [/actual_system/force] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,812: -SUB [/actual_system/reset] /actual_system/simluator http://aneesh-Swift:33357/
+[rosmaster.master][INFO] 2023-03-29 15:27:45,812: -SERVICE [/actual_system/simluator/get_loggers] /actual_system/simluator rosrpc://aneesh-Swift:44203
+[rosmaster.master][INFO] 2023-03-29 15:27:45,813: -SERVICE [/actual_system/simluator/set_logger_level] /actual_system/simluator rosrpc://aneesh-Swift:44203
+[rosmaster.master][INFO] 2023-03-29 15:27:45,817: publisherUpdate[/actual_system/reset] -> http://aneesh-Swift:33357/ []: sec=0.01, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2023-03-29 15:27:45,817: Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1109, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1450, in __request
+    response = self.__transport.request(
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1153, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1165, in single_request
+    http_conn = self.send_request(host, handler, request_body, verbose)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1278, in send_request
+    self.send_content(connection, request_body)
+  File "/usr/lib/python3.8/xmlrpc/client.py", line 1308, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/usr/lib/python3.8/http/client.py", line 922, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-03-29 15:27:46,811: -PUB [/rosout_agg] /rosout http://aneesh-Swift:43317/
+[rosmaster.master][INFO] 2023-03-29 15:27:46,812: -SUB [/rosout] /rosout http://aneesh-Swift:43317/
+[rosmaster.master][INFO] 2023-03-29 15:27:46,812: -SERVICE [/rosout/get_loggers] /rosout rosrpc://aneesh-Swift:41851
+[rosmaster.master][INFO] 2023-03-29 15:27:46,813: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://aneesh-Swift:41851
+[rosmaster.main][INFO] 2023-03-29 15:27:46,888: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2023-03-29 15:27:46,888: stopping master...
+[rospy.core][INFO] 2023-03-29 15:27:46,889: signal_shutdown [atexit]

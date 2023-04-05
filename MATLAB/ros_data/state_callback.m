@@ -1,5 +1,5 @@
 function state_callback(~,msg)
-    global xt yt nColsNodes original_pose f2 t_x t_y r
+    global xt yt nColsNodes original_pose f2 t_x t_y r tip_vel_t target_pose
     x=msg.Data(1:2:end);
     y=msg.Data(2:2:end);
     xt=[xt,x];
@@ -24,6 +24,11 @@ function state_callback(~,msg)
     % plot the circle.
     plot(xr,yr - 0.75);
     hold off
+    
+    tip_vel = sqrt((tip_vel_t(1,end))^2 + (tip_vel_t(2,end))^2);
+    tar_vel = sqrt((target_pose(3,end))^2 + (target_pose(4,end))^2);
+    text(-0.6,0.2,sprintf('Tip Velocity=%.2f and Target Velocity=%.2f',tip_vel, tar_vel));
+    
     xlim([-0.05+original_pose(end,2),0.05-original_pose(end,2)])
     ylim([original_pose(end,2)*1.5,0.6])
 end

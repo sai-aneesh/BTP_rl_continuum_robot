@@ -1,0 +1,30 @@
+[rospy.client][INFO] 2023-03-29 12:11:08,628: init_node, name[/controller], pid[50380]
+[xmlrpc][INFO] 2023-03-29 12:11:08,629: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-03-29 12:11:08,629: Started XML-RPC server [http://aneesh-Swift:41507/]
+[rospy.impl.masterslave][INFO] 2023-03-29 12:11:08,629: _ready: http://aneesh-Swift:41507/
+[rospy.registration][INFO] 2023-03-29 12:11:08,630: Registering with master node http://localhost:11311
+[xmlrpc][INFO] 2023-03-29 12:11:08,630: xml rpc node: starting XML-RPC server
+[rospy.init][INFO] 2023-03-29 12:11:08,630: ROS Slave URI: [http://aneesh-Swift:41507/]
+[rospy.init][INFO] 2023-03-29 12:11:08,630: registered with master
+[rospy.rosout][INFO] 2023-03-29 12:11:08,630: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-03-29 12:11:08,632: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-03-29 12:11:08,633: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-03-29 12:11:08,643: topic[/steady_system/complete_pose] adding connection to [http://aneesh-Swift:45773/], count 0
+[rospy.internal][INFO] 2023-03-29 12:11:08,644: topic[/steady_system/velocity] adding connection to [http://aneesh-Swift:45773/], count 0
+[rospy.internal][INFO] 2023-03-29 12:11:08,669: topic[/steady_system/force] adding connection to [/steady_state_checker_node], count 0
+[rospy.internal][INFO] 2023-03-29 12:11:08,868: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-03-29 12:11:08,871: topic[/actual_system/reset] adding connection to [/actual_system/simluator], count 0
+[rospy.internal][INFO] 2023-03-29 12:12:21,195: topic[/steady_system/force] adding connection to [/matlab_global_node_72556], count 1
+[rospy.internal][INFO] 2023-03-29 12:12:21,196: topic[/actual_system/target] adding connection to [/matlab_global_node_72556], count 0
+[rospy.internal][INFO] 2023-03-29 12:12:21,411: topic[/actual_system/radius] adding connection to [/matlab_global_node_72556], count 0
+[rospy.core][INFO] 2023-03-29 12:36:00,122: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-03-29 12:36:00,123: topic[/steady_system/force] removing connection to /matlab_global_node_72556
+[rospy.internal][INFO] 2023-03-29 12:36:00,123: topic[/actual_system/target] removing connection to /matlab_global_node_72556
+[rospy.internal][INFO] 2023-03-29 12:36:00,124: topic[/actual_system/radius] removing connection to /matlab_global_node_72556
+[rospy.internal][INFO] 2023-03-29 12:36:00,127: topic[/steady_system/complete_pose] removing connection to http://aneesh-Swift:45773/
+[rospy.internal][INFO] 2023-03-29 12:36:00,128: topic[/steady_system/velocity] removing connection to http://aneesh-Swift:45773/
+[rospy.internal][INFO] 2023-03-29 12:36:00,129: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-03-29 12:36:00,130: topic[/steady_system/force] removing connection to /steady_state_checker_node
+[rospy.internal][INFO] 2023-03-29 12:36:00,131: topic[/actual_system/reset] removing connection to /actual_system/simluator
+[rospy.impl.masterslave][INFO] 2023-03-29 12:36:00,131: signal-2
+[rospy.core][INFO] 2023-03-29 12:36:00,727: signal_shutdown [atexit]

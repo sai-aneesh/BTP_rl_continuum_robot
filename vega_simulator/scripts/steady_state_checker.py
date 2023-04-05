@@ -66,6 +66,8 @@ class steady_state_checker:
         # rospy.loginfo("STUCK HERE")
         # rospy.loginfo(self.count)
         if(self.count == 6):
+            self.end = time.time() 
+            dt = self.end-self.start
             # rospy.loginfo("STEADY STATE!!")
             self.steady = True
             self.steady2 = True
@@ -74,12 +76,12 @@ class steady_state_checker:
             self.state_pub.publish(self.states_msg)
             # rospy.loginfo("B5.sending the steady state to RL_controller")
 
-            self.end = time.time() 
-            dt = self.end-self.start
             self.vel_msg.data = np.array([(x-self.x_0)/dt, (y-self.y_0)/dt])                 ## have to calculate the velocity for the travel between the previous steady state to this steady state 
             self.vel_pub.publish(self.vel_msg)
             # rospy.loginfo("B7.sending the steady state velocity to RL_controller")
-            
+            # print("FROM STEADY STATE LOOP: OLD STATE:",self.x_0,self.y_0)
+            # print("FROM STEADY STATE LOOP: current STATE:",x,y, "time elapsed:",dt)            
+            # print("FROM STEADY STATE LOOP: VELOCITY", self.vel_msg.data, np.sqrt((self.vel_msg.data[0])**2 + (self.vel_msg.data[1])**2))
             self.x_0 = x
             self.y_0 = y
             self.start = time.time()
