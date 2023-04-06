@@ -25,7 +25,7 @@ function state_callback(~,msg)
     plot(xr,yr - 0.75);
     hold off
 
-    text(-0.6,0.4,sprintf('Radius=%.2f and Eccentricity=%.2f',r,e));
+    text(-0.6,0.4,sprintf('Semi Major Axis=%.2f and Eccentricity=%.2f',r,e));
     tip_vel = sqrt((tip_vel_t(1,end))^2 + (tip_vel_t(2,end))^2);
     tar_vel = sqrt((target_pose(3,end))^2 + (target_pose(4,end))^2);
     text(-0.6,0.2,sprintf('Tip Velocity=%.2f and Target Velocity=%.2f',tip_vel, tar_vel));

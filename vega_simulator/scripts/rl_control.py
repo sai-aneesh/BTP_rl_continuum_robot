@@ -152,16 +152,10 @@ class vega_env(gym.Env):
 
         self.theta += self.tar_vel*dt
 
-        # if(self.theta <= 1.38) and (self.clck == False):
-        #     self.theta += self.tar_vel*dt
-        # elif(self.theta > 1.38) and (self.clck == False):
-        #     self.theta -= self.tar_vel*dt
-        #     self.clck = True
-        # elif(self.theta >= -1.38) and (self.clck == True):
-        #     self.theta -= self.tar_vel*dt
-        # elif (self.theta < -1.38) and (self.clck == True):
-        #     self.theta += self.tar_vel*dt
-        #     self.clck = False
+        if(self.clck == False):
+            self.theta += self.tar_vel*dt
+        else:
+            self.theta -= self.tar_vel*dt
 
         self.t_x = self.radius*np.sin(self.theta)
         self.t_y = self.radius*np.sqrt(1- self.eccen**2)*(1-np.cos(self.theta))
